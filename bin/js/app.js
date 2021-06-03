@@ -14,7 +14,7 @@ document.getElementById("plot").addEventListener("click", function() {
         console.log("(" + time[i] + ", " + pos[i] + ")")
     };
     console.log(dist)
-    let posi = pos.map(x => parseInt(x) + parseInt(dist))
+    let posi = pos.map(x => parseInt(x))
 
 
     let position = new Chart(document.getElementById("position"), {
