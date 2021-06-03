@@ -24,7 +24,7 @@
             <input type="number" class="position form__field" placeholder="Enter Displacement (in units of distance)" name="#" id='dist' required/><br><br><br>
 
             <input type="number" class="velocity form__field" placeholder="Enter Initial Velocity (in units / time)" name="#" id='vel' required/><br><br><br>
-          
+
             <input type="number" class="acceleration form__field" placeholder="Enter Acceleration (in units / time^2)" name="#" id='accel' required/><br><br><br><br>
 
             <button type="button submit"  class="primary generateBtn" id="plot">
@@ -37,12 +37,16 @@
 
 
 </body>
-<div class="chart-container" style="position: relative; height:40vh; width:40vw">
+<div class="chart-container" style="position: relative; height:40vh; width:40vw; margin: 50px">
   <canvas id="position"></canvas>
   <script src = "js/app.js"></script>
 </div>
-<div class="chart-container" style="position: relative; height:40vh; width:40vw">
+<div class="chart-container" style="position: relative; height:40vh; width:40vw; margin: 50px">
   <canvas id="velocity"></canvas>
+  <script src = "js/app.js"></script>
+</div>
+<div class="chart-container" style="position: relative; height:40vh; width:40vw; margin: 50px">
+  <canvas id="acceleration"></canvas>
   <script src = "js/app.js"></script>
 </div>
 <br>
