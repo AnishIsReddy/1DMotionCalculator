@@ -17,8 +17,8 @@ document.getElementById("plot").addEventListener("click", function() {
     let posi = pos.map(x => parseFloat(x))
 
     const fVel =  Math.sqrt((iVel**2.0)+(2.0*accel*dist));
-    dTime = Math.round(1000*(fVel-iVel)/accel)/1000;
-    eTime = "Time: " + dTime + " seconds";
+    const dTime = Math.round(1000*(fVel-iVel)/accel)/1000;
+    var eTime = "Time: " + dTime + " seconds";
 
     const timeX = document.querySelector(".timeX");
     timeX.innerHTML = eTime;
