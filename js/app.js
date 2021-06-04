@@ -16,6 +16,13 @@ document.getElementById("plot").addEventListener("click", function() {
     console.log(dist)
     let posi = pos.map(x => parseFloat(x))
 
+    const fVel =  Math.sqrt((iVel**2.0)+(2.0*accel*dist));
+    dTime = Math.round(1000*(fVel-iVel)/accel)/1000;
+    eTime = "Time: " + dTime + " seconds";
+
+    const timeX = document.querySelector(".timeX");
+    timeX.innerHTML = eTime;
+
 
     let position = new Chart(document.getElementById("position"), {
     type: 'line',
@@ -67,4 +74,9 @@ acce = []
         ]
     }
 });
+// const dist = document.querySelector(".position").value;
+// const iVel = document.querySelector(".velocity").value;
+// const accel = document.querySelector(".acceleration").value;
+
+
 });
