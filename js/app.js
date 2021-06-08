@@ -2,9 +2,11 @@ document.getElementById("plot").addEventListener("click", function() {
     let dist = document.getElementById("dist").value;
     let iVel = document.getElementById("vel").value;
     let accel = document.getElementById("accel").value;
+    let initi = document.getElementById("initial").value;
 
     let time = [0,1,2,3,4,5,6,7,8,9,10];
     dist ? dist : dist= 0.0
+    initi ? initi : initi = 0.0
     iVel ? iVel : iVel = 0.0
     accel ? accel : accel = 0.0
 
@@ -14,7 +16,7 @@ document.getElementById("plot").addEventListener("click", function() {
         console.log("(" + time[i] + ", " + pos[i] + ")")
     };
     console.log(dist)
-    let posi = pos.map(x => parseFloat(x))
+    let posi = pos.map(x => parseFloat(x) + parseFloat(initi))
     
     let fVel =  Math.sqrt((iVel**2.0)+(2.0*accel*dist));
     
@@ -29,6 +31,13 @@ document.getElementById("plot").addEventListener("click", function() {
 
     const timeX = document.querySelector(".timeX");
     timeX.innerHTML = eTime;
+    
+    let dVel = Math.round(1000*(fVel))/1000
+    
+    var eVel = "Final velocity after displacement occurs: " + dVel + " meters per second";
+
+    const velX = document.querySelector(".velX");
+    velX.innerHTML = eVel;
 
 
     let position = new Chart(document.getElementById("position"), {
@@ -38,7 +47,7 @@ document.getElementById("plot").addEventListener("click", function() {
         datasets: [
             {
             data: posi,
-            label: "Displacement",
+            label: "Position",
             borderColor: "#3e95cd",
             fill: false
             }
